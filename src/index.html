@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <main class="main">
+        <section class="section">
+            <div class="section__container container">
+                <div class="section__header header">
+                    <div class="header__logo">GENOTEK</div>
+                    <div class="header__timer">час назад</div>
+                    <div class="wrapper">
+                        <img class="header__user-logo" src="user_logo.svg" alt="логотип юзера">
+                        <div class="header__description">доступно только мне</div>
+                    </div>
+                </div>
+                <h1 class="section__title">
+                    Подарочный набор для сдачи ДНК-теста доставлен
+                </h1>
+                <p class="section__subtitle">
+                    Спасибо, что выбрали Genotek! На упаковке вы найдете<br class="desktop"> подробную инструкцию как сдать ДНК-тест.
+                <p>
+            </div>
+            <div class="section__intro"></div>
+            <div class="section__dropdown dropdown">
+                <div onclick="openDropdown(this)" class="dropdown__button container">
+                    <h2>Как подарить набор другу, чтобы он создал свой личный кабинет?</h2>
+                    <div class="dropdown__arrow">
+                        <img src="arrow.svg" alt="стрелка">
+                    </div>
+                </div>
+                <div class="dropdown__content">
+                    <div class="dropdown__line"></div>
+                    <div class="dropdown__container container">
+                        <div class="dropdown__inner">
+                            <p class="dropdown__description">Все просто! На подарочной упаковке ДНК-теста указан временный логин и пароль, 
+                                который защищен стираемой полосой.
+                            </p>
+                            <p class="dropdown__description">Человеку, который получил ДНК-тест в подарок, нужно ввести временный логин и 
+                                пароль на странице входа в личный кабинет 
+                                <a href="https://lk.genotek.ru/" target="_blank">lk.genotek.ru.</a> 
+                                После этого ему будет предложено зарегистрироваться или указать данные уже 
+                                зарегистрированного пользователя, ввести номер пробирки и вызвать курьера для доставки биоматериала в лабораторию.
+                            </p>
+                            <p class="dropdown__description">
+                                Обратите внимание, что по умолчанию вы не получите доступ к результатам ДНК-теста того, кому вы подарили тест. 
+                                Но вы можете попросить вашего близкого поделиться с вами результатами в его настройках профиля.
+                            </p>
+                            <img 
+                                class="dropdown__image_mobile"
+                                src="box-personal.png"
+                                srcset="box-personal@2x.png 2x, box-personal@3x.png 3x"
+                                alt="данные логина на упаковке">
+                        </div>
+                        <div class="wrapper">
+                            <img 
+                                class="dropdown__image_desktop"
+                                src="box-personal.png"
+                                srcset="box-personal@2x.png 2x, box-personal@3x.png 3x"
+                                alt="данные логина на упаковке">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="section__dropdown dropdown">
+                <div onclick="openDropdown(this)" class="dropdown__button container">
+                    <h2>Хочу активировать ДНК-тест в этом личном кабинете</h2>
+                    <div class="dropdown__arrow">
+                        <img src="arrow.svg" alt="стрелка">
+                    </div>
+                </div>
+                <div class="dropdown__content">
+                    <div class="dropdown__line"></div>
+                    <div class="dropdown__container container">
+                        <div class="dropdown__inner">
+                            <p class="dropdown__description">На подарочной упаковке ДНК-теста указан временный логин и пароль, который защищен 
+                                стираемой полосой. Пожалуйста, введите их ниже. После ввода временных данных, вы сможете ввести номер пробирки 
+                                и вызвать курьера для доставки биоматериала в лабораторию. 
+                            </p>
+                            <img 
+                                class="dropdown__image_mobile"
+                                src="box-personal.png"
+                                srcset="box-personal@2x.png 2x, box-personal@3x.png 3x"
+                                alt="данные логина на упаковке">
+                            <form class="dropdown__form form">
+                                <div id="login" class="wrapper">
+                                    <input id="loginInput" class="form__input" type="text" placeholder="Логин">
+                                    <img id="loginCloseButton" class="form__icon-button" src="close.svg" alt="очистить поле ввода">
+                                </div>
+                                <div id="password" class="wrapper">
+                                    <input id="passwordInput" class="form__input" type="text" placeholder="Пароль">
+                                    <img id="passwordCloseButton" class="form__icon-button" src="close.svg" alt="очистить поле ввода">
+                                </div>
+                                <button type="submit" class="form__button">Активировать ДНК-тест</button>
+                            </form>
+                        </div>
+                        <div class="wrapper">
+                            <img 
+                                class="dropdown__image_desktop"
+                                src="box-personal.png"
+                                srcset="box-personal@2x.png 2x, box-personal@3x.png 3x"
+                                alt="данные логина на упаковке">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

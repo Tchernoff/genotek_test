@@ -1,0 +1,325 @@
+/* FAST RESET
+============================================= */
+html, body, div, h1, h2, p, a, 
+img, article, header, section {
+  margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+input:focus{
+    outline: none;
+}
+
+/* COLOR VARIABLES
+============================================= */
+$grey: #f4f4f6;
+$darkgrey: #6d7278;
+$white: #ffffff;
+$black: #000000;
+$dark-blue: #142536;
+$dark-blue-grey: #22374b;
+$blue: #5a88c1;
+$border: #405265;
+$input-border: #5c738b;
+$bronw-grey: #8a7c5d;
+
+
+/* CUSTOMISED SELECTORS + HELPER CLASSES
+============================================= */
+
+html, body {
+    width: 100%;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    background-color: $grey;
+}
+
+h1 {
+    font-size: 30px;
+    line-height: 1.27;
+    color: $black;
+}
+
+h2 {
+    font-size: 22px;
+    line-height: 1.27;
+    color: $white;
+}
+
+p, a, input, button {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+a {
+    color: $blue;
+    text-decoration: none;
+}
+
+input {
+    border: none;
+    border-bottom: solid 1px $input-border;
+    background-color: $dark-blue;
+    color: $white;
+}
+
+input:focus {
+    border-bottom: solid 1px $white;
+}
+
+::placeholder {
+    color: $white;
+}
+
+button {
+    cursor: pointer;
+    color: $white;
+    text-align: center;
+    height: 50px;
+    border: solid 1px $white;
+    background-color: $dark-blue;
+    border-radius: 29.5px;
+}
+
+.container {
+    padding: 15px;
+
+    @media screen and (min-width: 1024px) {
+        padding: 30px 50px;
+    }
+}
+
+.wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+
+    @media screen and (min-width: 1024px) {
+        width: fit-content;
+    }
+}
+
+.desktop {
+    display: none;
+    @media screen and (min-width: 1024px) {
+        display: block;
+    }
+}
+
+/* PAGE STRUCTURE
+============================================= */
+
+.section {
+    background-color: $white;
+    max-width: 1300px;
+    margin: 0 auto;
+
+    &__header {
+        display: flex;
+        align-items: center;
+        padding-top: 15px;
+    
+        div + div {
+            margin-left: 15px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            padding: 0;
+        }
+        
+    }
+
+    &__intro {
+        height: 220px;
+        background-image: url('gift_desktop.png');
+        background-size: cover;
+        background-position: center;
+
+        @media screen and (min-width: 768px) {
+            height: 320px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            height: 450px;
+        }
+    }
+
+    &__title {
+        padding-top: 15px;
+    }
+
+    &__subtitle {
+        padding-top: 8px;
+        color: $black;
+    }
+
+    &__dropdown {
+        border-bottom: solid 2px $border;
+    }
+}
+
+.header {
+
+    &__logo {
+        font-size: 14px;
+        line-height: 1.43;
+        letter-spacing: 1.5px;
+        color: $darkgrey;
+    }
+
+    &__timer {
+        font-size: 14px;
+        line-height: 1.36;
+        color: $darkgrey;
+    }
+
+    &__description {
+        display: none;
+        margin-left: 8px;
+        font-size: 14px;
+        line-height: 1.36;
+        color: $bronw-grey;
+        
+
+        @media screen and (min-width: 1024px) {
+            display: inline-block;
+        }
+    }
+}
+
+.dropdown {
+
+    &__content {
+        display: none;
+        background-color: $dark-blue;
+
+        &_open {
+            display: block;
+        }
+
+        p {
+            color: $white;
+        }
+    }
+
+    &__container {
+
+        @media screen and (min-width: 1024px) {
+            display: flex;
+        }
+    }
+
+    &__inner {
+
+        p + p {
+            margin-top: 10px;
+        }
+
+        @media screen and (min-width: 1024px) {
+            max-width: 55%;
+        }
+        
+    }
+
+    &__line {
+        margin: 0 15px;
+        height: 1px;
+        background-color: $border;
+    }
+
+    &__button {
+        cursor: pointer;
+        background-color: $dark-blue;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box;
+        border: none;
+        text-align: left;
+        font-size: 22px;
+        line-height: 1.27;
+        color: $white;
+        width: 100%;
+
+        &:active {
+            background-color: $dark-blue-grey;
+        }
+    }
+
+    &__arrow {
+        line-height: 8px;
+        transform: rotate(180deg);
+        transition: transform; 
+
+        &_open {
+            transform: rotate(360deg);
+        }
+    }
+
+    &__image {
+        
+        &_mobile {
+            display:block;
+            margin: 30px auto 15px auto;
+
+            @media screen and (min-width: 1024px) {
+                display: none;
+            }
+        }
+
+        &_desktop {
+            display: none;
+            margin-left: 110px;
+
+            @media screen and (min-width: 1024px) {
+                display: block;
+            }
+        }
+    }
+
+    &__form {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.form {
+
+    &__input {
+        width: 100%;
+        margin: 15px 0;
+
+        @media screen and (min-width: 1024px) {
+            width: 280px;
+        }
+    }
+
+    &__icon-button {
+        display: none;
+        cursor: pointer;
+        position: absolute;
+        width: 14px;
+        height: 14px;
+        right: 0;
+
+        &_open {
+            display: block;
+        }
+    }
+
+    &__button {
+        margin: 30px 0 30px 0;
+
+        @media screen and (min-width: 1024px) {
+            width: 215px;
+        }
+    }
+}
